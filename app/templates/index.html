@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Query</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<a href="/reflections">View Reflections</a>
+<form action="/" method="post">
+    Search: <input type="text" name="user_query">
+    <input type="submit" value="Query Logs">
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Params</th>
+            <th>Response</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log['timestamp'] }}</td>
+            <td><pre>{{ log['params'] }}</pre></td>
+            <td><pre>{{ log['response'] | to_pretty_json }}</pre></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

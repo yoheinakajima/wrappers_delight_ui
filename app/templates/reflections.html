@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reflections</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<a href="/">Back to Logs</a>
+<h2>Reflections</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Parameters</th>
+            <th>Analysis</th>
+            <th>Is Satisfactory?</th>
+            <th>Suggested Prompt</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reflection in reflections|reverse %}
+        <tr>
+            <td><pre>{{ reflection['kwargs'] | to_pretty_json }}</pre></td>
+            <td>{{ reflection['reflection']['analysis'] }}</td>
+            <td>{{ reflection['reflection']['is_satisfactory'] }}</td>
+            <td>{{ reflection['reflection']['suggested_prompt'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

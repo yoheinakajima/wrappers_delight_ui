@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Results</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Response</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log['timestamp'] }}</td>
+            <td>{{ log['response'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/">Back</a>
+</body>
+</html>
