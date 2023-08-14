@@ -9,7 +9,19 @@
 - **Responsive Design**: Adaptable and user-friendly on both desktop and mobile devices.
 
 ## Quickstart:
+### Requirements:
+Before diving in, ensure you have the following libraries installed:
 
+- openai
+- matplotlib
+- pandas
+- ndjson
+
+You can install these requirements using pip:
+
+```bash
+pip install openai matplotlib pandas ndjson
+```
 1. Clone the `wrappers_delight_ui` repository:
     ```bash
     git clone https://github.com/yoheinakajima/wrappers_delight_ui.git
